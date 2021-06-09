@@ -1,21 +1,19 @@
 package com.factorhardware.scaffoldbackend.controller;
 
 
-import com.factorhardware.scaffoldbackend.POJOs.UserPojo;
+import com.factorhardware.scaffoldbackend.model.Users;
 import org.springframework.web.bind.annotation.*;
-import java.math.BigDecimal;
 
 @RestController
 public class MainController {
 
-    UserPojo pojo;
+    Users pojo;
 
     @ResponseBody
-    @RequestMapping(value = "/getDetails", method = RequestMethod.GET, produces = "application/json")
-    public UserPojo getDetails(@RequestParam(value = "userId", required = true) String userId){
-        pojo = new UserPojo();
+    @RequestMapping(value = "/getUserPackages", method = RequestMethod.GET, produces = "application/json")
+    public String getUserPackages(@RequestParam(value = "userName", required = true) String userName){
 
-        return pojo;
+        return "";
     }
 
 

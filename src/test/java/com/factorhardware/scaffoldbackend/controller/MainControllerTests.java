@@ -21,7 +21,7 @@ public class MainControllerTests {
 
     @Test
     public void testGetDetails() throws Exception {
-        this.mockMvc.perform(MockMvcRequestBuilders.get("/getDetails").param("loanNumber", "123123"))
+        this.mockMvc.perform(MockMvcRequestBuilders.get("/getUserPackages").param("loanNumber", "123123"))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                 .andExpect(content().json("{\"loanNumber\" : 123123, \"dollarAmount\" : 123.123 }"));
