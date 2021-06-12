@@ -6,6 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.util.Date;
 
+//Entity to represent a Product Package
 @Entity
 public class ProductPackage {
 

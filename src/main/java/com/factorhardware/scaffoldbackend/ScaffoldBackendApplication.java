@@ -22,6 +22,7 @@ public class ScaffoldBackendApplication {
 
     @Bean
     public String setup(UserRepository userRepository, ProductPackageService productService) throws Exception{
+        // Adding users to the H2 data base.
         userRepository.save(new User("Alex","Smith", "asmith@gmail.com"));
         userRepository.save(new User("Josh","Smith", "jsmith@gmail.com"));
         userRepository.save(new User("John","Doe", "jDoe@gmail.com"));
@@ -37,7 +38,7 @@ public class ScaffoldBackendApplication {
             System.out.println(user.toString());
         }
 
-
+        //Adding some test packages
         productService.save(new ProductPackage("asmith@gmail.com","Test Package","hello.txt",
                 "10,20,30","06/12/2021" , "This is a test package"));
         productService.save(new ProductPackage("jDoe2@gmail.com","Test Package2","hello.txt",
@@ -56,10 +57,6 @@ public class ScaffoldBackendApplication {
         for (ProductPackage p: productService.getAllProductPackages()) {
             System.out.println(p.toString());
         }
-
-        System.out.println(productService.getUserPackages("asmith@gmail.com"));
-
-
-        return "";
+        return "Data setup done";
     }
 }
