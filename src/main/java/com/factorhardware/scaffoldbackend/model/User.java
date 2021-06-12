@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Users {
+public class User {
 
 
 
@@ -16,15 +16,13 @@ public class Users {
 
     private String firstName;
     private String lastName;
-
-
-
+    //This field is unique in the database
     private String userEmail;
 
-    public Users() {
+    public User() {
     }
 
-    public Users(String firstName, String lastName, String userEmail) {
+    public User(String firstName, String lastName, String userEmail) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.userEmail = userEmail;
